@@ -13,7 +13,11 @@ require_once('vendor/autoload.php');
 $f3 = Base::instance();
 
 //define initial route
-$f3->route('GET /', function () {
+$f3->route('GET /', function ($f3) {
+
+    $f3->set('username', 'jshmo');
+    $f3->set('password', 'Password01');
+    $f3->set('title', 'Working With Templates');
     //instantiate a view
     $view = new Template();
     echo $view->render("views/info.html");
